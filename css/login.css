@@ -1,0 +1,70 @@
+/* Tamaño que abarca la pagina web */
+html {
+  height: 100%;
+}
+
+/* Contennido de la pagina web */
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(#042f50, #0d69b0,#317ab3);
+}
+
+/* Contenido de los div */
+.contenedor {
+  margin: 50px auto;
+  width: 400px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
+  font-family: "Beau Rivage";
+  text-align: center;
+  font-size: 25px;
+}
+
+/* Texto del Login */
+.contenedor h2 {
+  margin: 0px 0px 30px;
+  padding: 0;
+  font-size: 40px;
+  color: #4cc9f0;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+/* Texto de usuario y password*/
+.contenedor .elemento label {
+  color: #ffffff;
+  letter-spacing: 3px;
+}
+
+/* Espacio donde el usuario captura los datos */
+.contenedor .elemento input {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  padding: 10px 0px;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Boton de Enviar */
+.contenedor .elemento input[type="submit"] {
+  background-color: #257df7;
+  font-family: "Beau Rivage";
+  border: none;
+  letter-spacing: 3px;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 15px;
+  margin-top: 30px;
+  border-radius: 20px 5px 20px 5px;
+}
+
+.img_usuario{
+  height: 80px;
+  width: 80px;
+}
