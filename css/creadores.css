@@ -68,6 +68,7 @@ a{
 	display: inline-block;
     font-size: 15px;
     border-bottom: 5px solid #2878da;
+    transition: all 0.4s ease-in-out!important;
 }
 
 .contactoCreador a:hover,a:active {
