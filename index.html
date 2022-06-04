@@ -4,22 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap" rel="stylesheet">
     <title>Formulario Login</title>
-    <link rel="stylesheet" href="../Proyecto_Final_Web/css/login.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Dancing+Script&family=Lobster&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <div class="contenedor">
       <div>
-        <img class="img_usuario" src="../Proyecto_Final_Web/img/usuario.png" alt="Imagen usuario">
+        <img class="img_usuario" src="img/avatar.png" alt="Imagen usuario">
       </div>
-      <h2>Sing in</h2>
-      <form id="forma" name="forma" method="post">
+      <h2>SING IN</h2>
+      <form id="forma" name="forma" method="post" autocomplete="off">
         <div class="elemento ">
           <label for="usuario">Usuario</label>
           <input type="text" id="usuario" name="usuario" required="true" />
@@ -34,7 +31,7 @@
           />
         </div>
           <div class="elemento"> 
-            <input type="submit" value="Login"/>   
+            <input type="submit" value="Log in" id="send"/>   
           </div>
       </form>
     </div>

@@ -6,12 +6,13 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Cairo', sans-serif;
 }
 
 h1{
     text-align: center;
-    font-size: 70px;
-    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    /* font-family: 'Lobster', cursive; */
     letter-spacing: 8px;
     text-decoration: inherit;
     margin-bottom: 40px;
@@ -25,7 +26,7 @@ h1{
 }
 
 .creador{
-    border: 10px double #1162a0;
+    border: 3px solid #1162a0;
     background: #a4c6e0;
     border-radius: 30px;
     width: 400px;
@@ -38,16 +39,16 @@ h1{
 
 .nombreCreador h4{
     font-size: 30px;
-    font-family: 'Lobster', cursive;
-    color: rgb(221, 223, 233);
+    /* font-family: 'Lobster', cursive; */
+    color: #fff;
     letter-spacing: 5px;
     text-shadow: 3px 1px rgb(40, 40, 40);
     margin: 10px 10px 20px 10px;
 }
 
 .fotoPerfil img{
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 100%;
     border: 5px solid darkslategray;
 }
@@ -58,24 +59,21 @@ a{
     letter-spacing: 3px;
 }
 .contactoCreador a:link, a:visited {
-	background-color: #4989e2;
-    font-family: 'Lobster', cursive;
+	background: #3f95ffc1;
 	color: white;
-    border-radius: 50px;
-	padding: 20px 40px;
+    border-radius: 10px;
+	padding: 15px 40px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
     font-size: 15px;
+    border-bottom: 5px solid #2878da;
 }
 
 .contactoCreador a:hover,a:active {
-    font-family: 'Lobster', cursive;
-	background-color: #183de2;
-	border-radius: 50px;
-	padding: 20px 40px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-    font-size: 20px;
+    /* font-family: 'Lobster', cursive; */
+	background: #87bdff;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 75%);
+    transform: translateY(-5px)!important;
+    /* color:#000; */
 }
