@@ -24,15 +24,15 @@ public class CredencialDAO {
     private static final String SQL_INSERT = "insert into Credencial(nombre_credencial,password_credencial) values ( ?,? )";
     private static final String SQL_UPDATE = "update Credencial set nombre_credencial = ?,password_credencial = ? where nombre_credencial = ? ";
     private static final String SQL_DELETE = "delete from Credencial where nombre_credencial = ?";
-    private static final String SQL_READ = "select nombre_credencial,password_credencial where nombre_credencial = ?";
+    private static final String SQL_READ = "select nombre_credencial,password_credencial from Credencial where nombre_credencial = ?";
     private static final String SQL_READ_ALL = "select * from Credencial";
 
     private Connection conexion;
 
     private void conectar() {
-        String usuario = "root";
-        String clave = "password";
-        String url = "jdbc:mysql://localhost:3306/eventos_web"; ////// Cambiar nombre de base de datos ///////////
+        String usuario = "root"; // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ Revisar usuario !!!!!!!!!!!!!!!!!!!
+        String clave = "This1Life2Is3Incredible"; // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ Revisar contraseña !!!!!!!!!!!!!!!!!!!
+        String url = "jdbc:mysql://localhost:3306/proyectometa4cm3"; // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ Revisar url !!!!!!!!!!!!!!!!!!!
         //?serverTimezone=America/Mexico_City&allowPublicKeyRetrieval=true&useSSL=false
         String driver = "com.mysql.cj.jdbc.Driver";
 
@@ -164,7 +164,7 @@ public class CredencialDAO {
 
     public static void main(String[] args) {
         CredencialDTO dto = new CredencialDTO();
-        dto.getEntidad().setNombreCredencial("Hallo Motto");
+        dto.getEntidad().setNombreCredencial("EMI");
         //dto.getEntidad().setNombreEstado("escom");
 
         CredencialDAO dao = new CredencialDAO();
@@ -172,8 +172,8 @@ public class CredencialDAO {
             //dao.create(dto);
             //dao.update(dto);
             //dao.delete(dto);
-            //System.out.println(dao.read(dto));
-            System.out.println(dao.readAll());
+            System.out.println(dao.read(dto));
+            //System.out.println(dao.readAll());
         } catch (SQLException ex) {
             Logger.getLogger(CredencialDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

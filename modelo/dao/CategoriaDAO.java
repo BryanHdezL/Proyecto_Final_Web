@@ -24,15 +24,15 @@ public class CategoriaDAO {
     private static final String SQL_INSERT = "insert into Categoria(nombre_categoria) values ( ? )";
     private static final String SQL_UPDATE = "update Categoria set nombre_categoria = ? where id_categoria = ? ";
     private static final String SQL_DELETE = "delete from Categoria where id_categoria = ?";
-    private static final String SQL_READ = "select id_categoria,nombre_categoria where id_categoria = ?";
+    private static final String SQL_READ = "select nombre_categoria,id_categoria from Categoria where id_categoria = ? ";
     private static final String SQL_READ_ALL = "select * from Categoria";
 
     private Connection conexion;
 
     private void conectar() {
-        String usuario = "root";
-        String clave = "password";
-        String url = "jdbc:mysql://localhost:3306/eventos_web"; ////// Cambiar nombre de base de datos ///////////
+        String usuario = "root"; // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ Revisar usuario !!!!!!!!!!!!!!!!!!!
+        String clave = "This1Life2Is3Incredible"; // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ Revisar contraseña !!!!!!!!!!!!!!!!!!!
+        String url = "jdbc:mysql://localhost:3306/proyectometa4cm3"; // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ Revisar url !!!!!!!!!!!!!!!!!!!
         //?serverTimezone=America/Mexico_City&allowPublicKeyRetrieval=true&useSSL=false
         String driver = "com.mysql.cj.jdbc.Driver";
 
@@ -153,8 +153,8 @@ public class CategoriaDAO {
         List resultado = new ArrayList();
         while (rs.next()) {
             CategoriaDTO dto = new CategoriaDTO();
-            dto.getEntidad().setIdCategoria(rs.getInt("id_categoria"));
             dto.getEntidad().setNombreCategoria(rs.getString("nombre_categoria"));
+            dto.getEntidad().setIdCategoria(rs.getInt("id_categoria"));
             resultado.add(dto);
         }
         return resultado;
@@ -170,8 +170,8 @@ public class CategoriaDAO {
             //dao.create(dto);
             //dao.update(dto);
             //dao.delete(dto);
-            //System.out.println(dao.read(dto));
-            System.out.println(dao.readAll());
+            System.out.println(dao.read(dto));
+            //System.out.println(dao.readAll());
         } catch (SQLException ex) {
             Logger.getLogger(CategoriaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

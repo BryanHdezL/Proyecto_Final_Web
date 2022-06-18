@@ -25,15 +25,15 @@ public class VentaDAO {
     private static final String SQL_INSERT = "insert into Venta(fecha_venta,id_producto) values ( ?,? )";
     private static final String SQL_UPDATE = "update Venta set fecha_venta = ?,id_producto = ? where id_venta = ? ";
     private static final String SQL_DELETE = "delete from Venta where id_venta = ?";
-    private static final String SQL_READ = "select id_venta,fecha_venta,id_producto where id_venta = ?";
+    private static final String SQL_READ = "select id_venta,fecha_venta,id_producto from Venta where id_venta = ?";
     private static final String SQL_READ_ALL = "select * from Venta";
 
     private Connection conexion;
 
     private void conectar() {
-        String usuario = "root"; ///////////// Cambiar usuario //////////////////
-        String clave = "password"; /////////////// Cambiar contraseña /////////////////
-        String url = "jdbc:mysql://localhost:3306/eventos_web"; ////// Cambiar nombre de base de datos ///////////
+        String usuario = "root"; // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ Revisar usuario !!!!!!!!!!!!!!!!!!!
+        String clave = "This1Life2Is3Incredible"; // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ Revisar contraseña !!!!!!!!!!!!!!!!!!!
+        String url = "jdbc:mysql://localhost:3306/proyectometa4cm3"; // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ Revisar url !!!!!!!!!!!!!!!!!!!
         //?serverTimezone=America/Mexico_City&allowPublicKeyRetrieval=true&useSSL=false
         String driver = "com.mysql.cj.jdbc.Driver";
 
@@ -126,6 +126,7 @@ public class VentaDAO {
             }
         }
     }
+    
     public List readAll() throws SQLException {
         conectar();
         PreparedStatement ps = null;
@@ -151,7 +152,7 @@ public class VentaDAO {
             }
         }
     }
-
+    
     private List obtenerResultados(ResultSet rs) throws SQLException {
         List resultado = new ArrayList();
         while (rs.next()) {

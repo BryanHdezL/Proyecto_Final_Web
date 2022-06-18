@@ -17,7 +17,7 @@ public class Usuario implements Serializable {
     private String nombre_usuario;
     private String telefono_usuario;
     private String puesto_usuario;
-    private int id_credencial;
+    private String nombre_credencial;
 
     public int getIdUsuario() {
         return id_usuario;
@@ -51,11 +51,11 @@ public class Usuario implements Serializable {
         this.puesto_usuario = puesto_usuario;
     }
     
-    public int getIdCredencial() {
-        return id_credencial;
+    public String getNombreCredencial() {
+        return nombre_credencial;
     }
 
-    public void setIdCredencial(int id_credencial) {
-        this.id_credencial = id_credencial;
+    public void setNombreCredencial(String nombre_credencial) {
+        this.nombre_credencial = nombre_credencial;
     }
 }

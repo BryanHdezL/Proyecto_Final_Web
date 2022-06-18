@@ -22,20 +22,20 @@ import java.util.logging.Logger;
 public class UsuarioDAO {
 
     private static final String SQL_INSERT = "insert into Usuario(nombre_usuario,telefono_usuario,puesto_usuario"
-            + "id_credencial) values ( ?,?,?,? )";
+            + "nombre_credencial) values ( ?,?,?,? )";
     private static final String SQL_UPDATE = "update Usuario set nombre_usuario = ?,telefono_usuario = ?,puesto_usuario = ?"
-            + ",id_credencial = ? where id_usuario = ? ";
+            + ",nombre_credencial = ? where id_usuario = ? ";
     private static final String SQL_DELETE = "delete from Usuario where id_usuario = ?";
-    private static final String SQL_READ = "select id_usuario,nombre_usuario,telefono_usuario,puesto_usuario"
-            + "id_credencial from Usuario where id_usuario = ?";
+    private static final String SQL_READ = "select id_usuario,nombre_usuario,telefono_usuario,puesto_usuario,"
+            + "nombre_credencial from Usuario where id_usuario = ?";
     private static final String SQL_READ_ALL = "select * from Usuario";
 
     private Connection conexion;
 
     private void conectar() {
-        String usuario = "root";
-        String clave = "password";
-        String url = "jdbc:mysql://localhost:3306/eventos_web"; ////// Cambiar nombre de base de datos ///////////
+        String usuario = "root"; // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ Revisar usuario !!!!!!!!!!!!!!!!!!!
+        String clave = "This1Life2Is3Incredible"; // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ Revisar contraseña !!!!!!!!!!!!!!!!!!!
+        String url = "jdbc:mysql://localhost:3306/proyectometa4cm3"; // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ Revisar url !!!!!!!!!!!!!!!!!!!
         //?serverTimezone=America/Mexico_City&allowPublicKeyRetrieval=true&useSSL=false
         String driver = "com.mysql.cj.jdbc.Driver";
 
@@ -56,7 +56,7 @@ public class UsuarioDAO {
             ps.setString(1, dto.getEntidad().getNombreUsuario());
             ps.setString(2, dto.getEntidad().getTelefonoUsuario());
             ps.setString(3, dto.getEntidad().getPuestoUsuario());
-            ps.setInt(4, dto.getEntidad().getIdCredencial());
+            ps.setString(4, dto.getEntidad().getNombreCredencial());
             
             ps.executeUpdate();
         } finally {
@@ -77,7 +77,7 @@ public class UsuarioDAO {
             ps.setString(1, dto.getEntidad().getNombreUsuario());
             ps.setString(2, dto.getEntidad().getTelefonoUsuario());
             ps.setString(3, dto.getEntidad().getPuestoUsuario());
-            ps.setInt(4, dto.getEntidad().getIdCredencial());
+            ps.setString(4, dto.getEntidad().getNombreCredencial());
             ps.setInt(5, dto.getEntidad().getIdUsuario());
             ps.executeUpdate();
         } finally {
@@ -166,8 +166,8 @@ public class UsuarioDAO {
             dto.getEntidad().setIdUsuario(rs.getInt("id_usuario"));
             dto.getEntidad().setNombreUsuario(rs.getString("nombre_usuario"));
             dto.getEntidad().setTelefonoUsuario(rs.getString("telefono_usuario"));
-            dto.getEntidad().setPuestoUsuario(rs.getString("puesto_suario"));
-            dto.getEntidad().setIdCredencial(rs.getInt("id_credencial"));
+            dto.getEntidad().setPuestoUsuario(rs.getString("puesto_usuario"));
+            dto.getEntidad().setNombreCredencial(rs.getString("nombre_credencial"));
             resultado.add(dto);
         }
         return resultado;
@@ -175,7 +175,7 @@ public class UsuarioDAO {
 
     public static void main(String[] args) {
         UsuarioDTO dto = new UsuarioDTO();
-        dto.getEntidad().setIdUsuario(4);
+        dto.getEntidad().setIdUsuario(104);
         //dto.getEntidad().setNombreEstado("escom");
 
         UsuarioDAO dao = new UsuarioDAO();
@@ -183,8 +183,8 @@ public class UsuarioDAO {
             //dao.create(dto);
             //dao.update(dto);
             //dao.delete(dto);
-            //System.out.println(dao.read(dto));
-            System.out.println(dao.readAll());
+            System.out.println(dao.read(dto));
+            //System.out.println(dao.readAll());
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

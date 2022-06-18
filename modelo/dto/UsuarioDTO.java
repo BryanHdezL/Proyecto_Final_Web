@@ -33,7 +33,7 @@ public class UsuarioDTO implements Serializable{
         sb.append("Nombre Usuario : ").append(getEntidad().getNombreUsuario()).append("\n");
         sb.append("Telefono Usuario : ").append(getEntidad().getTelefonoUsuario()).append("\n");
         sb.append("Puesto Usuario : ").append(getEntidad().getPuestoUsuario()).append("\n");
-        sb.append("Clave Evento Usuario : ").append(getEntidad().getIdCredencial()).append("\n");
+        sb.append("Clave Categoria : ").append(getEntidad().getNombreCredencial()).append("\n");
         
         return sb.toString();
     }
@@ -45,7 +45,7 @@ public class UsuarioDTO implements Serializable{
         dto.getEntidad().setNombreUsuario("Emiliano");
         dto.getEntidad().setTelefonoUsuario("Hurtado");
         dto.getEntidad().setPuestoUsuario("Morales");
-        dto.getEntidad().setIdCredencial(1);
+        dto.getEntidad().setNombreCredencial("EMO");
         
         
         System.out.println(dto);
