@@ -43,7 +43,7 @@ public class ProductoDAO {
 "    ORDER BY cantidad DESC LIMIT 10;";
     private static final String SQL_READ_TOP5 = "SELECT producto.nombre_producto, SUM(1) as cantidad\n" +
 "    FROM venta JOIN producto JOIN categoria ON venta.id_producto = producto.id_producto and categoria.id_categoria = producto.id_categoria\n" +
-"    where categoria.nombre_categoria = ?\n" +
+"    where categoria.nombre_categoria = 'TECNOLOGIA'\n" +
 "    GROUP BY producto.id_producto\n" +
 "    ORDER BY cantidad DESC LIMIT 5;";
 
@@ -227,13 +227,12 @@ public class ProductoDAO {
         }
     }
     
-    public List readTop5(CategoriaDTO dto) throws SQLException {
+    public List readTop5() throws SQLException {
         conectar();
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
             ps = conexion.prepareStatement(SQL_READ_TOP5);
-            ps.setString(1, dto.getEntidad().getNombreCategoria());
             rs = ps.executeQuery();
             List resultados = obtenerResultados2(rs);
             if (resultados.size() > 0) {
@@ -257,12 +256,10 @@ public class ProductoDAO {
     private List obtenerResultados2(ResultSet rs) throws SQLException {
         List resultado = new ArrayList();
         while (rs.next()) {
-            ProductoDTO dto = new ProductoDTO();
-            //VentaDTO dto2 = new VentaDTO();
-            dto.getEntidad().setNombreProducto(rs.getString("nombre_producto"));
-            dto.getEntidad().setIdCategoria(rs.getInt("cantidad"));
-   
-            resultado.add(dto);
+            String producto = rs.getString("nombre_producto");
+            resultado.add(producto);
+            String cantidad = String.valueOf(rs.getInt("cantidad"));
+            resultado.add(cantidad);
         }
         return resultado;
     }
@@ -299,7 +296,7 @@ public class ProductoDAO {
             //System.out.println(dao.readAll());
             //System.out.println(dao.readTop10());
             //System.out.println(dao.readTop10M());
-            System.out.println(dao.readTop5(dto3));
+            System.out.println(dao.readTop5());
         } catch (SQLException ex) {
             Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
