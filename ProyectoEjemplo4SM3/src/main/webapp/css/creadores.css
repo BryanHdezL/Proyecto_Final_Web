@@ -1,0 +1,80 @@
+/* Importados */
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Open+Sans&family=Permanent+Marker&family=Roboto:wght@300&family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Lobster&family=Open+Sans&family=Permanent+Marker&family=Roboto:wght@300&family=Sofia&display=swap');
+
+/* Formato incial */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+    /* font-family: 'Lobster', cursive; */
+    letter-spacing: 8px;
+    text-decoration: inherit;
+    margin-bottom: 40px;
+    color: midnightblue;
+}
+
+.creadores{
+    display: flex; 
+    flex-flow: row wrap;  
+    justify-content: center;
+}
+
+.creador{
+    border: 3px solid #1162a0;
+    background: #a4c6e0;
+    border-radius: 30px;
+    width: 400px;
+    height: 470px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.nombreCreador h4{
+    font-size: 30px;
+    /* font-family: 'Lobster', cursive; */
+    color: #fff;
+    letter-spacing: 5px;
+    text-shadow: 3px 1px rgb(40, 40, 40);
+    margin: 10px 10px 20px 10px;
+}
+
+.fotoPerfil img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    border: 5px solid darkslategray;
+}
+
+a{
+    margin: 10px;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+.contactoCreador a:link, a:visited {
+	background: #3f95ffc1;
+	color: white;
+    border-radius: 10px;
+	padding: 15px 40px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+    font-size: 15px;
+    border-bottom: 5px solid #2878da;
+    transition: all 0.4s ease-in-out!important;
+}
+
+.contactoCreador a:hover,a:active {
+    /* font-family: 'Lobster', cursive; */
+	background: #87bdff;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 75%);
+    transform: translateY(-5px)!important;
+    /* color:#000; */
+}
