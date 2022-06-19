@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap" rel="stylesheet">
     <title>Formulario Login</title>
   </head>
-  <body>
+  <body onload="mostrar()">
     <div class="contenedor">
       <div>
         <img class="img_usuario" src="img/avatar.png" alt="Imagen usuario">
@@ -31,9 +31,10 @@
           />
         </div>
           <div class="elemento"> 
-            <input type="submit" value="Log in" id="send"/>   
+            <input type="button" value="Log in" id="send" onclick="data()"/>   
           </div>
       </form>
     </div>
   </body>
+  <script src="/js/password.js"></script>
 </html>
